@@ -33,6 +33,7 @@ class Enigma(object):
         return letter
 
     def parseForwardThroughRotors(self, letter: str) -> str:
+        # The first rotor always rotates
         shouldRotateRotor = True
 
         for rotor in self.rotors:
