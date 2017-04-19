@@ -52,7 +52,7 @@ class Settings(object):
             raise Exception('Unable to parse reflector configuration')
 
     def _getRotors(self, rotorIds: dict, rotorPositions: dict) -> List[dict]:
-        rotors = {}
+        rotors = []
 
         for rotor in rotorIds.items():
             if not rotorPositions[rotor[0]]:
@@ -61,7 +61,7 @@ class Settings(object):
                     .format(rotor[0])
                 )
 
-            rotors.update({rotor[1]: rotorPositions[rotor[0]]})
+            rotors.append({rotor[1]: rotorPositions[rotor[0]]})
 
         return rotors
 
