@@ -13,7 +13,7 @@ def main():
     plugboard = PlugBoard(settings.plugboard)
     print(plugboard)
 
-    reflector = rf.create('A')
+    reflector = rf.create(settings.reflector)
     print(reflector)
 
 
