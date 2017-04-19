@@ -4,7 +4,7 @@ from reflector.reflector import Reflector
 from typing import List
 
 
-class Enigma(object):
+class Machine(object):
     plugboard = None
     rotors = []
     reflector = None
