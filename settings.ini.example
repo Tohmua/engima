@@ -1,0 +1,24 @@
+[rotors]
+rotor1 = I
+rotor2 = II
+rotor3 = III
+
+[rotor_positions]
+rotor1 = 10
+rotor2 = 10
+rotor3 = 10
+
+[plugboard]
+wire1  = a,b
+wire2  = c,d
+wire3  = e,f
+wire4  = g,h
+wire5  = i,j
+wire6  = k,l
+wire7  = m,n
+wire8  = o,p
+wire9  = q,r
+wire10 = s,t
+
+[reflector]
+reflector = A
