@@ -61,28 +61,6 @@ class Settings(object):
                     .format(rotor[0])
                 )
 
-            rotors.append({rotor[1]: rotorPositions[rotor[0]]})
+            rotors.append({rotor[1]: int(rotorPositions[rotor[0]])})
 
         return rotors
-
-    def _getRotor(self, rotorId: str):
-        try:
-            rotorsModule = __import__('rotor')
-
-            rotorModule = getattr(
-                rotorsModule,
-                'rotor_{}'.format(rotorId).lower()
-            )
-
-            rotorClass = getattr(
-                rotorModule,
-                'Rotor{}'.format(rotorId)
-            )
-
-            return rotorClass()
-
-        except AttributeError as error:
-            raise Exception(
-                'Rotor {} does not exist, please check your configuration'
-                .format(rotorId)
-            )

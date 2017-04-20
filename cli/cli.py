@@ -1,30 +1,19 @@
 from argparse import ArgumentParser
 from cli.settings import Settings
-from plugboard.plugboard import PlugBoard
-import reflector.factory as rf
-import rotor.factory as rotorFactory
-# from logger.logger import Logger
+from machine.factory import create as machineFactory
 
 
 def main():
     args = getCliArguments()
-
     settings = Settings(args.settings)
+    machine = machineFactory(settings)
 
-    plugboard = PlugBoard(settings.plugboard)
-    print(plugboard)
+    output = []
 
-    rotors = list(
-        map(
-            lambda x: rotorFactory.create(x),
-            settings.rotors
-        )
-    )
-    print(rotors)
+    for letter in list(args.message):
+        output.append(machine.encode(letter))
 
-    reflector = rf.create(settings.reflector)
-    print(reflector)
-
+    print(''.join(output))
 
 
 def getCliArguments():
