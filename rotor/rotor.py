@@ -33,6 +33,10 @@ class Rotor(object):
         'z': 'z',
     }
 
+    def __init__(self, startingPosition: int = 1):
+        for i in range(1, startingPosition):
+            self.rotate()
+
     @abstractmethod
     def shouldNextRotate(self, letter: str) -> bool:
         pass

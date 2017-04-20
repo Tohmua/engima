@@ -29,7 +29,7 @@ class PlugBoard(object):
         'z': 'z',
     }
 
-    def __init__(self, positions: dict):
+    def __init__(self, positions: dict = {}):
         if self.validate(positions):
             self.board = self.buildBoard(self.board, positions)
 
