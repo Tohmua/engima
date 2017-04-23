@@ -79,6 +79,4 @@ class Rotor(object):
             if v == letter:
                 return k
 
-        print(letter)
-        print(self.wheel.items())
         raise Exception('Letter {} not in rotor'.format(letter))
