@@ -33,15 +33,21 @@ class Rotor(object):
         'z': 'z',
     }
 
+    should_next_rotate = False
+
     def __init__(self, startingPosition: int = 1):
         for i in range(1, startingPosition):
             self.rotate()
 
     @abstractmethod
-    def shouldNextRotate(self, letter: str) -> bool:
+    def _shouldNextRotate(self, letter: str) -> bool:
         pass
 
+    def shouldNextRotate(self) -> bool:
+        return self.should_next_rotate
+
     def rotate(self):
+        self.should_next_rotate = False
         current = ''
         previous = ''
         first = ''
@@ -53,6 +59,7 @@ class Rotor(object):
 
             if previous == '':
                 first = current
+                self.shouldNextRotate = self._shouldNextRotate(current)
                 continue
 
             rotatedRotor.update({previous: v})

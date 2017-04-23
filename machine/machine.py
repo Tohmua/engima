@@ -40,7 +40,7 @@ class Machine(object):
             if shouldRotateRotor:
                 rotor.rotate()
 
-            shouldRotateRotor = rotor.shouldNextRotate(letter)
+            shouldRotateRotor = rotor.shouldNextRotate
             letter = rotor.forward(letter)
 
         return letter

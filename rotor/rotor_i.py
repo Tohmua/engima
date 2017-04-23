@@ -32,8 +32,5 @@ class RotorI(rotor.rotor.Rotor):
         'z': 'j',
     }
 
-    def shouldNextRotate(self, letter: str) -> bool:
-        if letter == 'r':
-            return True
-
-        return False
+    def _shouldNextRotate(self, letter: str) -> bool:
+        return letter == 'q'
